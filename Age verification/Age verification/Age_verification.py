@@ -1,21 +1,38 @@
+import datetime
+
+
 def printWelcomeMsg():
-    msg = "Hi im new"
+    date = datetime.date(2022, 2, 7)
+    msg = "Hi im new and this is my first py program written on {0}".format(date)
     print(msg)
 
 
 printWelcomeMsg()
 
 
+def readUInt():
+    value = -1
+    while value < 0:
+        valueAsString = input("write your age: ")
+        if valueAsString.isdecimal():
+            value = int(valueAsString)
+            break
+    return value
+
+
 def verifyAge():
-    age = int(input("write your age:"))
+    print()
+    age = readUInt()
+
     if age < 18:
-        print("minor")
-    else:
-        if age > 18:
-            print("adult")
-        else:
-            print("barely adult")
+        print("{0} is minor".format(age))
+        return
+    if age > 18:
+        print("{0} is adult".format(age))
+        return
+    print("{0} is barely adult".format(age))
 
 
-for x in range(4):
+youAndFriendsCount = 5
+for x in range(5):
     verifyAge()
