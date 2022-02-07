@@ -7,9 +7,6 @@ def printWelcomeMsg():
     print(msg)
 
 
-printWelcomeMsg()
-
-
 def readUInt():
     value = -1
     while value < 0:
@@ -33,6 +30,9 @@ def verifyAge():
     print("{0} is barely adult".format(age))
 
 
-youAndFriendsCount = 5
-for x in range(5):
+printWelcomeMsg()
+longMsg = "You and your friends are going to a bar; Input number of friends(imaginary included): "
+print(longMsg)
+friendsCount = readUInt()
+for x in range(friendsCount):
     verifyAge()
